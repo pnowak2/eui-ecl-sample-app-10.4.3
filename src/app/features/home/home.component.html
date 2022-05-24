@@ -1,22 +1,13 @@
 <ecl-form-group label="Select your preferred destinations">
     <div eclHelpBlock>This is the group's helper text</div>
 
-    <div eclCheckbox>
-        <input eclCheckboxInput id="checkbox-default1" name="checkbox-default" value="lu">
-        <label for="checkbox-default1" eclCheckboxLabel>Luxembourg</label>
-        <div id="helper-default-1" eclCheckboxHelp>Help text for option 1</div>
-    </div>
-
-    <div eclCheckbox>
-        <input eclCheckboxInput id="checkbox-default2" name="checkbox-default" value="be">
-        <label for="checkbox-default2" eclCheckboxLabel>Belgium</label>
-        <div id="helper-default-2" eclCheckboxHelp>Help text for option 2</div>
-    </div>
-
-    <div eclCheckbox [isDisabled]="true">
-        <input eclCheckboxInput [attr.disabled]="true" id="checkbox-default3" name="checkbox-default" value="pl">
-        <label for="checkbox-default3" eclCheckboxLabel>Poland</label>
-        <div id="helper-default-3" eclCheckboxHelp>Help text for option 3</div>
-    </div>
+    <input 
+        eclTextInput 
+        eclDatePicker 
+        [yearRange]="10"
+        format="DD-MM-YYYY"
+        eclSize="s" 
+        placeholder="DD-MM-YYYY"
+        (datePicked)="onDatePicked($event, PUBLICATION_DATE_TO, true)"/>
 
 </ecl-form-group>
