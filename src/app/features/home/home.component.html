@@ -1,13 +1,24 @@
-<ecl-form-group label="Select your preferred destinations">
-    <div eclHelpBlock>This is the group's helper text</div>
+<form [formGroup]="fg">
+    <ecl-form-group label="Select your preferred destinations" [isInvalid]="true">
+        <div eclHelpBlock>This is the group's helper text</div>
+        <div eclFeedbackMessage>Error message for the group</div>
 
-    <input 
-        eclTextInput 
-        eclDatePicker 
-        [yearRange]="10"
-        format="DD-MM-YYYY"
-        eclSize="s" 
-        placeholder="DD-MM-YYYY"
-        (datePicked)="onDatePicked($event, PUBLICATION_DATE_TO, true)"/>
+        <div eclCheckbox>
+            <input eclCheckboxInput formControlName="lu" type="checkbox" id="checkbox-invalid1" name="checkbox-invalid" value="lu">
+            <label for="checkbox-invalid1" eclCheckboxLabel>Luxembourg</label>
+            <p id="helper-invalid-1" eclCheckboxHelp>Help text for option 1</p>
+        </div>
 
-</ecl-form-group>
+        <div eclCheckbox>
+            <input eclCheckboxInput formControlName="be" type="checkbox" id="checkbox-invalid2" name="checkbox-invalid" value="be">
+            <label for="checkbox-invalid2" eclCheckboxLabel>Belgium</label>
+            <p id="helper-invalid-2" eclCheckboxHelp>Help text for option 2</p>
+        </div>
+
+        <div eclCheckbox [isDisabled]="true">
+            <input eclCheckboxInput formControlName="pl" type="checkbox" [attr.disabled]="true" id="checkbox-invalid3" name="checkbox-invalid" value="pl">
+            <label for="checkbox-invalid3" eclCheckboxLabel>Poland</label>
+            <p id="helper-invalid-3" eclCheckboxHelp>Help text for option 3</p>
+        </div>
+    </ecl-form-group>
+</form>
