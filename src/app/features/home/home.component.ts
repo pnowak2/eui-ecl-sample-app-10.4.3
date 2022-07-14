@@ -17,10 +17,7 @@ export class HomeComponent {
 
         this.fg.valueChanges.subscribe(changes => {
             console.log(changes);
-            console.log(this.fg.get('lu'))
         });
-
-        this.fg.markAllAsTouched();
     }
 
 }
