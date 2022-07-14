@@ -1,24 +1,30 @@
-<form [formGroup]="fg">
-    <ecl-form-group label="Select your preferred destinations" [isInvalid]="true">
-        <div eclHelpBlock>This is the group's helper text</div>
-        <div eclFeedbackMessage>Error message for the group</div>
+<div>
+    <h1 #details
+        class="ecl-u-type-heading-1 ecl-u-mt-xl ecl-u-mb-none">
+        Details 
+    </h1>
 
-        <div eclCheckbox>
-            <input eclCheckboxInput formControlName="lu" type="checkbox" id="checkbox-invalid1" name="checkbox-invalid" value="lu">
-            <label for="checkbox-invalid1" eclCheckboxLabel>Luxembourg</label>
-            <p id="helper-invalid-1" eclCheckboxHelp>Help text for option 1</p>
-        </div>
-
-        <div eclCheckbox>
-            <input eclCheckboxInput formControlName="be" type="checkbox" id="checkbox-invalid2" name="checkbox-invalid" value="be">
-            <label for="checkbox-invalid2" eclCheckboxLabel>Belgium</label>
-            <p id="helper-invalid-2" eclCheckboxHelp>Help text for option 2</p>
-        </div>
-
-        <div eclCheckbox [isDisabled]="true">
-            <input eclCheckboxInput formControlName="pl" type="checkbox" [attr.disabled]="true" id="checkbox-invalid3" name="checkbox-invalid" value="pl">
-            <label for="checkbox-invalid3" eclCheckboxLabel>Poland</label>
-            <p id="helper-invalid-3" eclCheckboxHelp>Help text for option 3</p>
-        </div>
-    </ecl-form-group>
-</form>
+    <ecl-file title="State of the Union 2018 brochure"
+              language="English"
+              [meta]="['(16.2 MB - PDF)','important','from dgt']"
+              href="./assets/images/landing-page/portfolio/thumbnails/1.jpg"
+              aria-label="Download file 'State of the Union 2018 brochure'">
+        <ecl-file-items>
+            <ecl-file-item title="български"
+                           meta="(15.8 MB - PDF)"
+                           aria-label="Download file in bulgarian"
+                           href="./assets/images/landing-page/portfolio/thumbnails/2.jpg"></ecl-file-item>
+            <ecl-file-item title="español"
+                           meta="(15.8 MB - PDF)"
+                           aria-label="Download file in spanish"
+                           href="./assets/images/landing-page/portfolio/thumbnails/3.jpg"></ecl-file-item>
+            <ecl-file-item title="čeština"
+                           meta="(15.8 MB - PDF)"
+                           aria-label="Download file in czech"
+                           href="./assets/images/landing-page/portfolio/thumbnails/4.jpg"></ecl-file-item>
+            <ecl-file-item [isDescription]="true">
+                Looking for another language which is not on the list? Find out why.
+            </ecl-file-item>
+        </ecl-file-items>
+    </ecl-file>
+</div>
